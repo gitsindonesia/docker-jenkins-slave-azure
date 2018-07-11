@@ -35,8 +35,3 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update -y && apt-get install docker-ce -y
 RUN usermod -a -G docker jenkins
-
-# Install Kedge
-RUN curl -L https://github.com/kedgeproject/kedge/releases/download/v0.12.0/kedge-linux-amd64 -o kedge && \
-    chmod +x kedge && \
-    mv ./kedge /usr/local/bin/kedge
