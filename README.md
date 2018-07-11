@@ -1,8 +1,8 @@
 # Jenkins SSH slave Docker image + Azure
 
-[`gitsid/jenkins-slave-gcp`](https://hub.docker.com/r/gitsid/jenkins-slave-gcp/)
+[`gitsid/jenkins-slave-azure`](https://hub.docker.com/r/gitsid/jenkins-slave-azure/)
 
-A [Jenkins](https://jenkins-ci.org) slave using SSH to establish connection + Azure CLI + Kedge Project.
+A [Jenkins](https://jenkins-ci.org) slave using SSH to establish connection + Azure CLI
 
 ## Running
 
