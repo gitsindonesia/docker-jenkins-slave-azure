@@ -2,12 +2,16 @@ FROM jenkins/ssh-slave
 MAINTAINER Farhan Naufal Ghani <farhan.naufalghani@gmail.com>
 LABEL Description="This is a jenkins slave project for azure container" Vendor="GITS Indonesia" Version="1.0"
 
-
 RUN apt-get update && apt-get install -y apt-transport-https
 
 # Install Azure CLI
+RUN apt-get install lsb-release -y
+RUN AZ_REPO=$(lsb_release -cs)
+RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main" | \
+    tee /etc/apt/sources.list.d/azure-cli.list
 RUN curl -L https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN apt-get update && apt-get install azure-cli
+RUN apt-get update 
+RUN apt-get install azure-cli
 
 
 # Install Kuber
