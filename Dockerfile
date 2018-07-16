@@ -36,7 +36,9 @@ RUN add-apt-repository \
 RUN apt-get update -y && apt-get install docker-ce -y
 RUN usermod -a -G docker jenkins
 
+WORKDIR /apps
+
 # Install HELM
 RUN curl https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-rc.1-linux-amd64.tar.gz --output /opt/helm-v2.10.tar.gz
 RUN tar -zxvf /opt/helm-v2.10.tar.gz
-RUN cp linux-amd64/helm /usr/local/bin/helm
+RUN cp ./linux-amd64/helm /usr/local/bin/helm
